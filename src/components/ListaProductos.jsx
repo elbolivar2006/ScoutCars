@@ -2,14 +2,17 @@
 import React from 'react';
 import Producto from './Producto';
 
-function ListaProductos({ onAddToCart }) {
+function ListaProductos({ onAddToCart, alAgregar }) {
+  // Acepta tanto onAddToCart como alAgregar por flexibilidad
+  const manejarAgregar = onAddToCart || alAgregar;
+
   return (
     <div className="container my-4">
       <h2 className="text-center mb-4">Catálogo de ScoutCars</h2>
       <div className="row">
         {products.map((item) => (
           <div key={item.id} className="col-md-4 mb-4">
-            <Producto producto={item} onAddToCart={onAddToCart} />
+            <Producto producto={item} onAddToCart={manejarAgregar} />
           </div>
         ))}
       </div>
