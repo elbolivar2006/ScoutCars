@@ -16,16 +16,16 @@ function AgregarCarrito({
     <div className="container my-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>🛒 Carrito de Compras</h2>
-        <button className="btn btn-outline-secondary" onClick={alSeguirComprando}>
+        <button className="btn btn-scoutcars-outline" onClick={alSeguirComprando}>
           ← Seguir comprando
         </button>
       </div>
 
       {elementosCarrito.length === 0 ? (
-        <div className="alert alert-info text-center p-4">
+        <div  className="alert text-center p-4 aviso-carrito-vacio">
           <h4>Tu carrito está vacío</h4>
           <p className="mb-3">Explora nuestro catálogo y agrega los mejores autos a escala.</p>
-          <button className="btn btn-primary" onClick={alSeguirComprando}>
+          <button className="btn btn-scoutcars" onClick={alSeguirComprando}>
             Ver Productos
           </button>
         </div>
@@ -67,14 +67,14 @@ function AgregarCarrito({
                         <td>
                           <div className="d-flex align-items-center gap-2">
                             <button 
-                              className="btn btn-sm btn-outline-secondary"
+                              className="btn btn-sm btn-scoutcars-outline"
                               onClick={() => alActualizarCantidad(item.id, item.cantidad - 1)}
                             >
                               -
                             </button>
                             <span>{item.cantidad}</span>
                             <button 
-                              className="btn btn-sm btn-outline-secondary"
+                              className="btn btn-sm btn-scoutcars-outline"
                               onClick={() => alActualizarCantidad(item.id, item.cantidad + 1)}
                             >
                               +
@@ -100,19 +100,19 @@ function AgregarCarrito({
 
           <div className="col-lg-4">
             <div className="card shadow-sm p-3">
-              <h4 className="card-title border-bottom pb-2">Resumen del Pedido</h4>
+              <h4 className="card-title resumen-titulo pb-2">Resumen del Pedido</h4>
               <div className="d-flex justify-content-between my-2">
                 <span>Productos:</span>
                 <span>{elementosCarrito.reduce((acc, i) => acc + i.cantidad, 0)} unidades</span>
               </div>
               <div className="d-flex justify-content-between fw-bold fs-5 my-2">
                 <span>Total:</span>
-                <span className="text-danger">${totalPrecio.toLocaleString('es-CL')}</span>
+                <span style={{ color: '#850f1b' }}>{totalPrecio.toLocaleString('es-CL')}</span>
               </div>
-              <button className="btn btn-success w-100 mt-3" onClick={() => alert('¡Compra procesada con éxito!')}>
+              <button className="btn btn-scoutcars w-100 mt-3" onClick={() => alert('¡Compra procesada con éxito!')}>
                 Finalizar Compra
               </button>
-              <button className="btn btn-outline-danger w-100 mt-2" onClick={alVaciarCarrito}>
+              <button className="btn btn-scoutcars-outline w-100 mt-2" onClick={alVaciarCarrito}>
                 Vaciar Carrito
               </button>
             </div>

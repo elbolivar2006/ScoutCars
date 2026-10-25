@@ -59,7 +59,7 @@ function Micuenta() {
 
         {/* Iniciar sesión */}
         <div className="col-12 col-md-6">
-          <div className="card h-100 shadow p-4">
+          <div className="card h-100 shadow p-4 tarjeta-cuenta">
             <h2 className="text-center mb-4">
               Iniciar sesión
             </h2>
@@ -111,7 +111,7 @@ function Micuenta() {
 
         {/* Registrarse */}
         <div className="col-12 col-md-6">
-          <div className="card h-100 shadow p-4">
+          <div className="card h-100 shadow p-4 tarjeta-cuenta">
             <h2 className="text-center mb-4">
               Registrarse
             </h2>

@@ -8,7 +8,7 @@ function ListaProductos({ onAddToCart, alAgregar }) {
 
   return (
     <div className="container my-4">
-      <h2 className="text-center mb-4">Catálogo de ScoutCars</h2>
+
       <div className="row">
         {products.map((item) => (
           <div key={item.id} className="col-md-4 mb-4">
