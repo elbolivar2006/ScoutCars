@@ -60,8 +60,7 @@ export default function Admin({ elementosCarrito = [], cambiarVista }) {
   return (
     <div className="container-fluid bg-light min-vh-100 py-4">
       <div className="row">
-        {/* Sidebar de Navegación del Admin */}
-        <nav className="col-md-3 col-lg-2 d-md-block bg-dark text-white sidebar collapse rounded p-3 mb-4">
+        <nav className="col-md-3 col-lg-2 d-md-block text-white sidebar collapse rounded p-3 mb-4">
           <h4 className="text-center py-2 text-uppercase fw-bold text-warning">ScoutCars Admin</h4>
           <hr className="bg-secondary" />
           <ul className="nav flex-column">

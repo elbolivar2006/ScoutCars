@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 function AgregarCarrito({ 
@@ -16,14 +17,12 @@ function AgregarCarrito({
     0
   );
 
-  
   const neto = Math.round(total / 1.19);
   const iva = total - neto;
 
   const handleGenerarBoleta = () => {
     if (elementosCarrito.length === 0) return;
-    
-    
+
     setNumBoleta(Math.floor(100000 + Math.random() * 900000));
     setFechaEmision(new Date().toLocaleString('es-CL'));
     setMostrarBoleta(true);
@@ -36,7 +35,7 @@ function AgregarCarrito({
   };
 
   return (
-    <div className="container my-4">
+    <div className="container my-4 carrito-scoutcars">
       <h2 className="mb-4">🛒 Carrito de Compras</h2>
 
       {elementosCarrito.length === 0 ? (
@@ -86,13 +85,13 @@ function AgregarCarrito({
           </div>
 
           <div className="col-md-4">
-            <div className="card p-3 shadow-sm">
+            <div className="card p-3 shadow-sm resumen-scoutcars">
               <h4>Resumen del Pedido</h4>
               <p>Productos: {elementosCarrito.reduce((acc, i) => acc + i.cantidad, 0)} unidades</p>
-              <h3 className="text-danger">${total.toLocaleString('es-CL')}</h3>
-              
+              <h3 className="total-scoutcars">${total.toLocaleString('es-CL')}</h3>
+
               <button 
-                className="btn btn-success w-100 my-2"
+                className="btn btn-scoutcars w-100 my-2"
                 onClick={handleGenerarBoleta}
               >
                 Generar Boleta / Pagar
@@ -102,28 +101,25 @@ function AgregarCarrito({
         </div>
       )}
 
-      
       {mostrarBoleta && (
         <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.8)' }}>
           <div className="modal-dialog modal-dialog-centered modal-lg">
-            <div className="modal-content text-dark border-0 shadow-lg">
-              
-              
-              <div className="modal-header bg-light border-bottom p-4">
+            <div className="modal-content text-dark border-0 shadow-lg boleta-scoutcars">
+
+              <div className="modal-header boleta-header p-4">
                 <div className="w-100 d-flex justify-content-between align-items-center">
                   <div>
-                    <h3 className="fw-bold mb-0 text-danger">ScoutCars SpA</h3>
-                    <small className="text-muted">Venta de Autos a Escala y Coleccionables</small><br />
-                    <small className="text-muted">R.U.T.: 76.543.210-K — San Miguel, Santiago</small>
+                    <h3 className="fw-bold mb-0 titulo-boleta">ScoutCars SpA</h3>
+                    <small className="texto-boleta">Venta de Autos a Escala y Coleccionables</small><br />
+                    <small className="texto-boleta">R.U.T.: 76.543.210-K — San Miguel, Santiago</small>
                   </div>
-                  <div className="border border-danger border-2 p-2 text-center rounded text-danger">
+                  <div className="boleta-numero p-2 text-center rounded">
                     <span className="fw-bold d-block">BOLETA ELECTRÓNICA</span>
                     <span className="fw-bold">N° {numBoleta}</span>
                   </div>
                 </div>
               </div>
 
-              
               <div className="modal-body p-4">
                 <div className="mb-3 text-muted small">
                   <strong>Fecha de Emisión:</strong> {fechaEmision}<br />
@@ -131,7 +127,7 @@ function AgregarCarrito({
                 </div>
 
                 <table className="table table-bordered table-sm mb-3">
-                  <thead className="table-secondary">
+                  <thead className="boleta-tabla">
                     <tr>
                       <th>Cant.</th>
                       <th>Detalle del Producto</th>
@@ -151,7 +147,6 @@ function AgregarCarrito({
                   </tbody>
                 </table>
 
-                
                 <div className="row justify-content-end">
                   <div className="col-md-5">
                     <div className="d-flex justify-content-between border-bottom py-1">
@@ -162,7 +157,7 @@ function AgregarCarrito({
                       <span>I.V.A. (19%):</span>
                       <span>${iva.toLocaleString('es-CL')}</span>
                     </div>
-                    <div className="d-flex justify-content-between fw-bold fs-5 pt-2 text-success">
+                    <div className="d-flex justify-content-between fw-bold fs-5 pt-2 boleta-total">
                       <span>TOTAL:</span>
                       <span>${total.toLocaleString('es-CL')}</span>
                     </div>
@@ -170,8 +165,7 @@ function AgregarCarrito({
                 </div>
               </div>
 
-             
-              <div className="modal-footer bg-light">
+              <div className="modal-footer boleta-footer">
                 <button 
                   className="btn btn-outline-secondary" 
                   onClick={() => window.print()}
@@ -179,7 +173,7 @@ function AgregarCarrito({
                   🖨️ Imprimir / Guardar PDF
                 </button>
                 <button 
-                  className="btn btn-success" 
+                  className="btn btn-scoutcars" 
                   onClick={handleFinalizarYLimpiar}
                 >
                   Aceptar y Finalizar

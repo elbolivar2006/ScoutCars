@@ -40,9 +40,6 @@
 
   filter: drop-shadow(2px 2px 0 #111111);
 }
-
-
-
 /* Descripción */
 .encabezado p {
   max-width: 700px;
@@ -252,4 +249,144 @@
 .tarjeta-cuenta .btn-danger:hover {
   background-color: #5b0b12;
   border-color: #5b0b12;
+}
+
+/* Mensaje de carrito vacío */
+.carrito-scoutcars .alert-info {
+  background: linear-gradient(135deg, #d6d6d6, #eeeeee);
+  color: #333333;
+  border: 1px solid #a00000;
+  border-left: 5px solid #a00000;
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 600;
+}
+/* ===== CARRITO SCOUTCARS ===== */
+.carrito-scoutcars .resumen-scoutcars {
+  background: linear-gradient(145deg, #222222, #080808);
+  color: #eeeeee;
+  border: 1px solid #750000;
+  border-top: 4px solid #b00000;
+  border-radius: 10px;
+}
+
+.carrito-scoutcars .resumen-scoutcars h4 {
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.carrito-scoutcars .resumen-scoutcars p {
+  color: #cccccc;
+}
+
+.carrito-scoutcars .total-scoutcars {
+  color: #e10600;
+  font-weight: bold;
+}
+
+/* Botones principales */
+.carrito-scoutcars .btn-scoutcars {
+  background: linear-gradient(135deg, #c90000, #650000);
+  border: 1px solid #e10600;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.carrito-scoutcars .btn-scoutcars:hover {
+  background: linear-gradient(135deg, #ed0000, #850000);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Mensaje de carrito vacío */
+.carrito-scoutcars .alert-info {
+  background: linear-gradient(135deg, #d6d6d6, #eeeeee);
+  color: #333333;
+  border: 1px solid #a00000;
+  border-left: 5px solid #a00000;
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 600;
+}
+
+/* ===== BOLETA ===== */
+
+.carrito-scoutcars .boleta-scoutcars {
+  background: #eeeeee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carrito-scoutcars .boleta-header {
+  background: linear-gradient(135deg, #eeeeee, #c8c8c8);
+  color: #333333;
+  border-bottom: 4px solid #a00000;
+}
+
+.carrito-scoutcars .titulo-boleta {
+  color: #a00000;
+  font-weight: bold;
+}
+
+.carrito-scoutcars .texto-boleta {
+  color: #444444;
+}
+
+.carrito-scoutcars .boleta-numero {
+  border: 2px solid #a00000;
+  color: #333333;
+  background: #dedede;
+}
+
+.carrito-scoutcars .boleta-tabla th {
+  background: #252525;
+  color: #eeeeee;
+  border-color: #555555;
+}
+
+.carrito-scoutcars .boleta-scoutcars .table {
+  --bs-table-bg: #f1f1f1;
+  --bs-table-color: #222222;
+  --bs-table-border-color: #cccccc;
+}
+
+.carrito-scoutcars .boleta-total {
+  color: #a00000;
+}
+
+.carrito-scoutcars .boleta-footer {
+  background: #d8d8d8;
+  border-top: 1px solid #aaaaaa;
+}
+
+
+.carrito-scoutcars .resumen-scoutcars {
+  background: linear-gradient(145deg, #eeeeee, #cfcfcf);
+  color: #333333;
+  border: 1px solid #aaaaaa;
+  border-top: 4px solid #b00000;
+  border-radius: 10px;
+}
+
+.carrito-scoutcars .resumen-scoutcars h4 {
+  color: #333333;
+  font-weight: bold;
+}
+
+.carrito-scoutcars .resumen-scoutcars p {
+  color: #444444;
+}
+
+.sidebar {
+  background: linear-gradient(120deg, #050505, #3b1010) !important;
+  color: #ffffff !important;
+}
+
+.sidebar a {
+  color: #eeeeee !important;
+}
+
+.sidebar a:hover {
+  color: #e10600 !important;
 }
