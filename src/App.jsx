@@ -5,6 +5,7 @@ import Inicio from "./paginas/Inicio";
 import Productos from "./paginas/Productos";
 import Micuenta from "./paginas/Micuenta";
 import AgregarCarrito from "./components/AgregarCarrito";
+import Admin from "./paginas/Admin"; // O AdminPanel según cómo hayas nombrado tu archivo en páginas
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
@@ -66,10 +67,12 @@ function App() {
         totalItems={totalItems} 
       />
 
+      {/* Vistas renderizadas según la navegación */}
       {vista === 'inicio' && (
-  <Inicio 
-    alAgregar={manejarAgregarAlCarrito} cambiarVista={cambiarVistaYGuardar} 
-  />)}
+        <Inicio 
+          alAgregar={manejarAgregarAlCarrito} cambiarVista={cambiarVistaYGuardar} 
+        />
+      )}
       {vista === 'productos' && <Productos alAgregar={manejarAgregarAlCarrito} />}
       {vista === 'mi-cuenta' && <Micuenta />}
       {vista === 'carrito' && (
@@ -81,6 +84,7 @@ function App() {
           alSeguirComprando={() => cambiarVistaYGuardar('productos')}
         />
       )}
+      {vista === 'admin' && <Admin elementosCarrito={elementosCarrito} cambiarVista={cambiarVistaYGuardar} />}
     </div>
   );
 }

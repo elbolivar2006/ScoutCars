@@ -34,6 +34,15 @@ function Navegacion({ cambiarVista, vista, totalItems = 0 }) {
       >
         🛒 Carrito {totalItems > 0 && <span className="badge bg-danger ms-1">{totalItems}</span>}
       </a>
+
+      {/* Enlace integrado para el Panel de Administración */}
+      <a 
+        href="#admin" 
+        onClick={(e) => { e.preventDefault(); cambiarVista('admin'); }}
+        className={vista === 'admin' ? 'active text-warning fw-bold' : 'text-warning'}
+      >
+         Admin
+      </a>
     </nav>
   );
 }
