@@ -43,7 +43,9 @@ describe('Componente AgregarCarrito', () => {
         alSeguirComprando={() => {}} 
       />
     );
-    expect(screen.getByText('$50.000')).toBeTruthy();
+    // Solución: Apuntamos específicamente al h3 del resumen para evitar duplicados
+    const totalElement = screen.getByText('$50.000', { selector: 'h3.total-scoutcars' });
+    expect(totalElement).toBeTruthy();
   });
 
   it('7. Debe llamar a alEliminarDelCarrito al presionar el botón Eliminar', () => {
